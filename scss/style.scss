@@ -14,6 +14,10 @@ html{
   margin: 0 auto;
 }
 
+.invisible{
+  display: none;
+}
+
 .page-header{
   min-height: 95px;
   background-image: linear-gradient(to bottom, #333b45, #3d454f);
@@ -45,6 +49,7 @@ html{
   background-image: url("../images/rectangle-1@2x.jpg");
   position: relative;
   padding-top: 150px;
+  z-index: -1;
   .intro-heading{
     background-image: linear-gradient(to top, $secondary, $primary, $primary);
     font-family: 'Open Sans', sans-serif;
@@ -90,6 +95,7 @@ html{
     position: absolute;
     top: 0;
     right: 0;
+    z-index: -1;
   }
 }
 
