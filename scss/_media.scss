@@ -50,6 +50,12 @@
       justify-content: center;
     }
   }
+
+  .service-section{
+    img{
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 576px) {
@@ -87,6 +93,25 @@
       height: 750px;
       bottom: -131px;
       right: 0;
+    }
+  }
+
+  .service-section{
+    img{
+      margin-left: calc(50% - 327px);
+    }
+    .service-boxes{
+      display: flex;
+      justify-content: center;
+      div:nth-of-type(2){
+        margin: 0 35px;
+      }
+      .service-box{
+        max-width: 288px;
+        text-align: center;
+
+      }
+
     }
   }
 }

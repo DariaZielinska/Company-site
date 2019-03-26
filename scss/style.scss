@@ -8,6 +8,7 @@
 }
 
 html{
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container{
@@ -21,7 +22,6 @@ html{
 .page-header{
   min-height: 95px;
   background-image: linear-gradient(to bottom, #333b45, #3d454f);
-  font-family: 'Open Sans', sans-serif;
   .header-logo{
     background-image: linear-gradient(to top, $secondary, $primary, $primary);
     font-size: 22px;
@@ -51,7 +51,6 @@ html{
   z-index: -1;
   .intro-heading{
     background-image: linear-gradient(to top, $secondary, $primary, $primary);
-    font-family: 'Open Sans', sans-serif;
     font-size: 52px;
     font-weight: 800;
     font-style: normal;
@@ -144,4 +143,38 @@ html{
     background-color: #38414A;
     border-radius: 50%;
   }
+}
+
+.section-heading{
+  font-size: 38px;
+  font-weight: 300;
+  text-align: center;
+  color: #3a424c;
+  padding: 91px;
+
+}
+
+.service-section{
+  .service-box{
+    img{
+      margin-left: 0;
+      color: #3a424c;
+      padding-top: 38px;
+    }
+    h4{
+      font-size: 24px;
+      color: #3a424c;
+      font-weight: normal;
+      text-align: center;
+      padding: 24px 0;
+    }
+    p{
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.5;
+      text-align: center;
+      color: #9aa0a8;
+    }
+  }
+
 }
