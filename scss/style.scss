@@ -45,10 +45,9 @@ html{
 }
 
 .intro-section{
-  min-height: 628px;
   background-image: url("../images/rectangle-1@2x.jpg");
   position: relative;
-  padding-top: 150px;
+  //padding-top: 150px;
   z-index: -1;
   .intro-heading{
     background-image: linear-gradient(to top, $secondary, $primary, $primary);
@@ -59,7 +58,6 @@ html{
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: left;
     color: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -67,7 +65,6 @@ html{
   }
   .intro-text{
     color: #ffffff;
-    max-width: 435px;
     padding: 32px 0;
     font-size: 14px;
     font-weight: normal;
@@ -75,7 +72,7 @@ html{
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    text-align: left;
+
   }
   .intro-button{
     border: 1px solid $primary;
@@ -90,12 +87,10 @@ html{
   }
   .intro-img{
     background: transparent url("../images/front-screen-ui-design.png");
-    width: 761px;
-    height: 628px;
     position: absolute;
-    top: 0;
-    right: 0;
     z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
