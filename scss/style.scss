@@ -1,4 +1,5 @@
 @import "variables";
+@import "media";
 
 *{
   margin: 0;
@@ -7,22 +8,16 @@
 }
 
 html{
-
 }
 
 .container{
-  width: 1040px;
   margin: 0 auto;
 }
 
 .page-header{
-  height: 95px;
+  min-height: 95px;
   background-image: linear-gradient(to bottom, #333b45, #3d454f);
-  align-items: center;
   font-family: 'Open Sans', sans-serif;
-  display: flex;
-  justify-content: space-between;
-
   .header-logo{
     background-image: linear-gradient(to top, $secondary, $primary, $primary);
     font-size: 22px;
@@ -34,14 +29,12 @@ html{
 
   .header-nav{
     ul{
-      display: flex;
       list-style: none;
       a{
        text-decoration: none;
         color: #ffffff;
         font-size: 14px;
         font-weight: 700;
-        padding-left: 20px;
       }
     }
   }
@@ -67,7 +60,6 @@ html{
     -webkit-text-fill-color: transparent;
     margin-left: -3px;
   }
-
   .intro-text{
     color: #ffffff;
     max-width: 435px;
@@ -79,9 +71,7 @@ html{
     line-height: 1.5;
     letter-spacing: normal;
     text-align: left;
-
   }
-
   .intro-button{
     border: 1px solid $primary;
     background: $primary;
@@ -93,7 +83,6 @@ html{
     margin-bottom: 34px;
     cursor: pointer;
   }
-
   .intro-img{
     background: transparent url("../images/front-screen-ui-design.png");
     width: 761px;
@@ -102,7 +91,6 @@ html{
     top: 0;
     right: 0;
   }
-
 }
 
 .media-container{
@@ -155,6 +143,4 @@ html{
     background-color: #38414A;
     border-radius: 50%;
   }
-
-
 }
