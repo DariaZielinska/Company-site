@@ -1,5 +1,6 @@
 @import "variables";
 @import "media";
+@import "mixins";
 
 *{
   margin: 0;
@@ -7,7 +8,7 @@
   box-sizing: border-box;
 }
 
-html{
+body{
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -23,14 +24,9 @@ html{
   min-height: 95px;
   background-image: linear-gradient(to bottom, #333b45, #3d454f);
   .header-logo{
-    background-image: linear-gradient(to top, $secondary, $primary, $primary);
+    @include text-gradient;
     font-size: 22px;
-    font-weight: 800;
-    color: $primary;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
-
   .header-nav{
     ul{
       list-style: none;
@@ -43,24 +39,16 @@ html{
     }
   }
 }
-
 .intro-section{
   background-image: url("../images/rectangle-1@2x.jpg");
   position: relative;
   //padding-top: 150px;
   z-index: -1;
   .intro-heading{
-    background-image: linear-gradient(to top, $secondary, $primary, $primary);
+    @include text-gradient;
     font-size: 52px;
-    font-weight: 800;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-left: -3px;
+    color: #ffffff;
   }
   .intro-text{
     color: #ffffff;
@@ -71,18 +59,10 @@ html{
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
-
   }
   .intro-button{
-    border: 1px solid $primary;
-    background: $primary;
-    width: 102px;
-    height: 46px;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 12px;
+    @include button;
     margin-bottom: 34px;
-    cursor: pointer;
   }
   .intro-img{
     background: transparent url("../images/front-screen-ui-design.png");
@@ -92,7 +72,6 @@ html{
     background-repeat: no-repeat;
   }
 }
-
 .media-container{
   list-style: none;
   display: flex;
@@ -144,16 +123,13 @@ html{
     border-radius: 50%;
   }
 }
-
 .section-heading{
   font-size: 38px;
   font-weight: 300;
   text-align: center;
   color: #3a424c;
   padding: 91px;
-
 }
-
 .service-section{
   .service-box{
     img{
@@ -177,7 +153,6 @@ html{
     }
   }
 }
-
 .portfolio-section{
   width: 100vw;
   .portfolios-container{
@@ -190,31 +165,23 @@ html{
     }
   }
 }
-
 .pricing-section{
   .pricing-container{
     display: flex;
     justify-content: center;
     .pricing-box{
-      //width: 299px;
-      //height: 377px;
       border-radius: 10px;
       border: solid 2px #f5f7f9;
-      //margin: 0 10px;
       position: relative;
       .box-top{
+        @include background-gradient;
         height: 200px;
-        background-image: linear-gradient(135deg, #38404a, $secondary);
         border-top: #333b45;
         border-radius: 10px;
         position: relative;
         p:nth-of-type(1){
-          background-image: linear-gradient(to top, $secondary, $primary, $primary);
-          color: $primary;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          @include text-gradient;
           font-size: 28px;
-          font-weight: 800;
           padding: 44px 24px;
         }
         p:nth-of-type(2){
@@ -273,29 +240,19 @@ html{
           left: 26px;
           background-repeat: no-repeat;
           background-size: contain;
-
         }
       }
       button{
+        @include button;
         position: absolute;
         bottom: 25px;
         left: calc(50% - 51px);
-        width: 102px;
-        height: 46px;
-        border-radius: 8px;
-        background-color: $primary;
-        border: 1px solid $primary;
-        font-size: 12px;
-        color: #ffffff;
-        font-weight: bold;
-        cursor: pointer;
       }
     }
   }
 }
-
 .blog-section{
-  background-image: linear-gradient(135deg, #38404a, $secondary);
+  @include background-gradient;
   padding: 64px 0;
   p{
     font-size: 32px;
@@ -322,7 +279,6 @@ html{
   span:nth-of-type(1){
     color: #ffffff;
   }
-
   i{
     position: relative;
     z-index: 1;
@@ -331,7 +287,6 @@ html{
     color: #333b45;
     cursor: pointer;
   }
-
   i:after{
     content: "";
     width: 38px;
@@ -340,17 +295,20 @@ html{
     border-radius: 50%;
     position: absolute;
     margin-right: 22px;
-
     z-index: -1;
     top: -10px;
     left: -10px;
   }
 }
-
 .form-section{
   form{
-    width: 80vw;
-    margin: 0 auto;
+    width: 70vw;
+    margin: 0 auto 92px;
+    button{
+      @include button;
+      margin-left: calc(50% - 51px);
+      margin-top: 10px;
+    }
   }
   label{
     width: 100%;
@@ -361,6 +319,18 @@ html{
       border-radius: 3px;
       background-color: #f5f7f9;
       margin: 9.5px 0;
+      padding: 15px;
+    }
+    input, textarea{
+      &::placeholder {
+        @include placeholder;
+      }
+      &:-ms-input-placeholder {
+        @include placeholder;
+      }
+      &::-ms-input-placeholder {
+        @include placeholder;
+      }
     }
     textarea{
       height: 256px;
@@ -375,12 +345,12 @@ html{
     }
   }
 }
-
 footer{
-  background-image: linear-gradient(135deg, #38404a, $secondary);
+  @include background-gradient;
   .container{
     justify-content: space-between;
     padding: 64px 0;
+    margin: 0 auto;
   }
   h5{
     font-size: 20px;
@@ -413,5 +383,4 @@ footer{
       color: #99a0a8;
     }
   }
-
 }
