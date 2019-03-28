@@ -353,6 +353,11 @@ body{
       margin-left: calc(50% - 51px);
       margin-top: 10px;
     }
+    .error-message{
+      text-align: center;
+      color: $primary;
+      padding-bottom: 15px;
+    }
   }
   label{
     width: 100%;
