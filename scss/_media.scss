@@ -27,7 +27,8 @@
   }
   .intro-section{
     position: relative;
-    min-height: 105vh;
+    min-height: 900px;
+    padding-top: 94px;
     .intro-heading{
       text-align: center;
       padding-top: 15px;
@@ -112,11 +113,14 @@
 
 @media (min-width: 576px) {
   .page-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    i{
-      display: none;
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 94px;
+      i{
+        display: none;
+      }
     }
   }
   .header-nav{
@@ -130,9 +134,9 @@
   }
 
   .intro-section{
-    padding-top: 50px;
+    padding-top: 150px;
     padding-left: calc(40% - 200px);
-    min-height: 800px;
+    min-height: 910px;
     .intro-heading{
       text-align: left;
     }
@@ -193,7 +197,6 @@
       }
     }
   }
-
   footer{
     .container{
       width: 70vw;
@@ -202,11 +205,13 @@
 
     }
   }
-
 }
 
 @media (min-width: 768px) {
 
+  .container{
+      width: 80vw;
+  }
   .pricing-section{
     .pricing-container{
       flex-direction: row;
@@ -243,9 +248,13 @@
 }
 
 @media (min-width: 992px) {
-  .container{
-    width: 80vw
+  .page-header{
+    .container{
+      display: flex;
+      justify-content: space-between;
+    }
   }
+
 
   .intro-section{
     padding-top: 150px;
