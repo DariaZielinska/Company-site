@@ -34,16 +34,23 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: left;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @mixin social-media {
-  content: "";
-  width: 38px;
-  height: 36px;
-  background-image: linear-gradient(to top, #9D4F59, $primary, $primary);
+  background: linear-gradient(to top, #9D4F59, $primary, $primary);
   border-radius: 50%;
-  position: absolute;
+  position: relative;
+  z-index: 1;
+  color: $primary;
+  text-align: center;
+  cursor: pointer;
+  &:after{
+    content: "";
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #38404a, $secondary);
+    position: absolute;
+    z-index: -1;
+  }
 }

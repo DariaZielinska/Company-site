@@ -15,4 +15,17 @@ document.addEventListener('DOMContentLoaded', function(){
 
     });
 
+    //generate text on portfolio images
+    const portfolioContainer = document.querySelector(".portfolios-container");
+    const portfolioImages = portfolioContainer.querySelectorAll("div");
+
+    portfolioImages.forEach(function (e) {
+        const header = document.createElement("p");
+        header.innerText = "PROJECT TITLE";
+        e.append(header)
+    })
+
+
+
+
 });
