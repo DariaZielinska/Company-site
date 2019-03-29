@@ -15,13 +15,11 @@
         <div class="container">
             <h1 class="header__logo">BUJE</h1>
             <nav class="header__nav">
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#service">SERVICE</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#pricing">PRICING</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
+                <a href="#" class="nav__item">HOME</a>
+                <a href="#service" class="nav__item">SERVICE</a>
+                <a href="#portfolio" class="nav__item">PORTFOLIO</a>
+                <a href="#pricing" class="nav__item">PRICING</a>
+                <a href="#contact" class="nav__item">CONTACT</a>
             </nav>
 
             <i class="fas fa-bars"></i>
@@ -36,9 +34,9 @@
             <p class="main__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <button class="main__contact-button" type="button">CONTACT US</button>
             <div class="media-container">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </main>
@@ -135,22 +133,32 @@
         <i class="fab fa-twitter"></i>
     </section>
 
-    <section class="page-section form-section" id="contact">
+    <section class="form-section" id="contact">
         <h3 class="section__heading">Contact</h3>
-        <form>
-            <p class="form__error-message"></p>
-            <label>
-                <input type="text" placeholder="ENTER YOUR NAME">
-                <input type="email" placeholder="ENTER YOUR EMAIL">
-                <select class="form__select-topics"></select>
+        <p class="form__error-message"></p>
+
+        <form class="section__form">
+            
+            <fieldset class="form__fieldset">
+                <label for="name" class="fieldset__label">
+                    <input type="text" id="name" name="user_name" placeholder="ENTER YOUR NAME" class="form__item"/>
+                </label>
+                <label for="email" class="fieldset__label">
+                    <input type="email" id="email" name="user_email" placeholder="ENTER YOUR EMAIL" class="form__item">
+                </label>
+                <label for="topic" class="fieldset__label">
+                    <select id="topic" name="user_topic" class="form__select form__select-topics"></select>
+                </label>
+            </fieldset>
+
+            <label for="subtopic">
+                <select id="subtopic" name="user_subtopic" class="form__select form__select-subtopics"></select>
             </label>
-            <label>
-                <select class="form__select-subtopics"></select>
+            <label for="message">
+                <textarea id="message" name="user_message" placeholder="MESSAGE..." class="form__item form__item--textarea"></textarea>
             </label>
-            <label>
-                <textarea placeholder="MESSAGE..."></textarea>
-            </label>
-            <button type="submit">SUBMIT</button>
+
+            <button type="submit" class="form__button">SUBMIT</button>
         </form>
     </section>
 
@@ -161,9 +169,9 @@
                 <p>Buje.com <span>&copy 2014 Powered by</span> Wordpress</p>
             </div>
             <div class="media-container">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
 

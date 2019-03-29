@@ -2,10 +2,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //making menu visible after clicking on hamburger menu icon
     document.querySelector(".fa-bars").addEventListener("click", function () {
-        if(document.querySelector(".header-nav").style.display === "none"){
-            document.querySelector(".header-nav").style.display = "block";
+
+        const openNav = document.querySelector(".header__nav--opened");
+        const closedNav =  document.querySelector(".header__nav");
+
+        if(openNav){
+            openNav.className = "header__nav";
+
+            //closing menu after pick a link
+            const navItems = openNav.querySelectorAll("a");
+            navItems.forEach(function (item) {
+                item.addEventListener("click", function () {
+                    openNav.className = "header__nav";
+                })
+            })
         }else{
-            document.querySelector(".header-nav").style.display = "none"
+            closedNav.className = "header__nav--opened";
         }
     });
 
