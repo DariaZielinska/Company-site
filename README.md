@@ -1,5 +1,8 @@
 # Web Developer Task
 
+## Preview available on:
+https://callstack-daria-zielinska.herokuapp.com
+
 ## Checklist
 - [X] Use one of the building tools (Webpack, Gulp, Parcel)
 - [X] Use GIT for versioning
@@ -21,18 +24,17 @@
 - [X] Copy this checklist into README file and check mark completed points
 
 ## Installation:
-1. `git clone https://github.com/DariaZielinska/Web-dev-task.git`
-2. `cd Web-dev-task`
-3. `npm i`
-4. `gulp`
+1. `cd Web-dev-task`
+2. `npm i`
+3. `gulp`
 
 In development mode, localhost server will run on localhost:3000 
 
 ## What is missing? 
 
-- [[x]] I have a lot to learn about BEM convention. I still use tags in stylesheet, which I know is a bad habit and I try to work on it. 
-- [[x]] I also did not import the Myriad Pro font, which I could not find free access to. 
-- [[x]] In the first version, the form was validated while user inputs data, I used the "keyup" event for this, but I encountered problems related to the final validation and inputs' red borders, which is why I changed to the current version.
+- I have a lot to learn about BEM convention. I still use tags in stylesheet, which I know is a bad habit and I try to work on it. 
+- I also did not import the Myriad Pro font, which I could not find free access to. 
+- In the first version, the form was validated while user inputs data, I used the "keyup" event for this, but I encountered problems related to the final validation and inputs' red borders, which is why I changed to the current version.
 
 - [?] I read in the documentation about the commit message convention and I honestly wonder if I did it correctly.
 - [?] Optimizing image loading is a topic that I do not quite understand. One of the pictures (phone from the main section) is displayed in a different resolution depending on the window width, but the rest displayed well in low resolution even on the big screen, that's why I did not change them. 
