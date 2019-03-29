@@ -54,20 +54,19 @@ document.addEventListener('DOMContentLoaded', function(){
     generateTopics();
 
     //form validation
-
-    let error = false;
-    let errorMessages = [];
     const form = document.querySelector("form");
-    let userName = form.querySelector("input[type='text']");
-    let userEmail = form.querySelector("input[type='email']");
-    let userMessage = form.querySelector("textarea");
-    const userTopic = form.querySelector("select[name='user_topic']");
-    const userSubtopic = form.querySelector("select[name='user_subtopic']");
-    const errorMessagesContainer = document.querySelector(".form__error-message");
-    const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 
     form.addEventListener("submit", function (e) {
+
+        let error = false;
+        let errorMessages = [];
+        let userName = form.querySelector("input[type='text']");
+        let userEmail = form.querySelector("input[type='email']");
+        let userMessage = form.querySelector("textarea");
+        const userTopic = form.querySelector("select[name='user_topic']");
+        const userSubtopic = form.querySelector("select[name='user_subtopic']");
+        const errorMessagesContainer = document.querySelector(".form__error-message");
+        const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         let dataContainer = {
             user_name: null,
@@ -103,7 +102,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 const p = document.createElement("p");
                 p.innerText = message;
                 errorMessagesContainer.appendChild(p);
-            })
+            });
+
+            console.log("error")
         }else{
             e.preventDefault();
 
