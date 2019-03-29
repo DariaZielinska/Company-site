@@ -46,6 +46,7 @@
       margin-left: calc(50vw - 51px);
     }
     .main__image{
+      background: transparent url("../images/assets/front-screen-ui-design.png");
       width: 500px;
       height: 500px;
       bottom: -88px;
@@ -133,6 +134,7 @@
       max-width: 435px;
     }
     .main__image{
+      background: transparent url("../images/assets/front-screen-ui-design@2x.png");
       width: 750px;
       height: 750px;
       bottom: -131px;
@@ -176,13 +178,11 @@
     }
   }
 
-
   footer{
     .container{
       width: 70vw;
       display: flex;
       justify-content: space-around;
-
     }
   }
 }
@@ -248,6 +248,7 @@
     padding-left: 0;
 
     .main__image{
+      background: transparent url("../images/assets/front-screen-ui-design@3x.png");
       bottom: -131px;
       right: 0;
     }
