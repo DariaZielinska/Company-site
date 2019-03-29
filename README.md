@@ -10,16 +10,15 @@
 - [X] Use one of CSS preprocessors (LESS, SCSS)
 - [ ] Use one of class naming convention (BEM, OOCSS, ACSS)
 - [X] Implement form with the behaviour described above
-- [ ] Form fields validation (choose one)
-   - [ ] before submit OR
+- [X] Form fields validation (choose one)
+   - [X] before submit OR
    - [ ] while user inputs data
 - [X] On form submit (choose one)
    -  [X] print fields values to console OR
    -  [ ] send a request to mocked API
-- [ ] Host the implemented website to provide a preview for reviewers
-- [ ] Integrate automatic release of the page
+- [X] Host the implemented website to provide a preview for reviewers
+- [X] Integrate automatic release of the page
 - [X] Copy this checklist into README file and check mark completed points
-
 
 ## Installation:
 1. `git clone https://github.com/DariaZielinska/Web-dev-task.git`
@@ -31,9 +30,12 @@ In development mode, localhost server will run on localhost:3000
 
 ## What is missing? 
 
-I tried to use the BEM methodology, but I still have to learn a lot. I also did not import the Myriad Pro font, which I could not find free access to. I read in the documentation about the commit message convention and I honestly wonder if I did it correctly. 
+- [[x]] I have a lot to learn about BEM convention. I still use tags in stylesheet, which I know is a bad habit and I try to work on it. 
+- [[x]] I also did not import the Myriad Pro font, which I could not find free access to. 
+- [[x]] In the first version, the form was validated while user inputs data, I used the "keyup" event for this, but I encountered problems related to the final validation and inputs' red borders, which is why I changed to the current version.
 
-In the first version, the form was validated while user inputs data, I used the "keyup" event for this, but I encountered problems related to the final validation and inputs' red borders, which is why I changed to the current version.
+- [?] I read in the documentation about the commit message convention and I honestly wonder if I did it correctly.
+- [?] Optimizing image loading is a topic that I do not quite understand. One of the pictures (phone from the main section) is displayed in a different resolution depending on the window width, but the rest displayed well in low resolution even on the big screen, that's why I did not change them. 
 
 ## Summary:
 
