@@ -37,10 +37,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const subtopicsSelect = document.querySelector(".form__select-subtopics");
             const subtopics = topics[select.selectedIndex].subtopic;
+            subtopicsSelect.length = 0;
 
             if(subtopics !== null){
                 // generate subtopics to select
                 subtopics.options.forEach(function (e) {
+
                     const subtopic = document.createElement("option");
                     subtopic.innerText = e.value.toUpperCase();
                     subtopicsSelect.append(subtopic);
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 subtopicsSelect.style.display = "table";
             }else{
                 subtopicsSelect.style.display = "none";
+
             }
         })
     }
@@ -60,12 +63,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
         let error = false;
         let errorMessages = [];
+        const errorMessagesContainer = document.querySelector(".form__error-message");
         let userName = form.querySelector("input[type='text']");
         let userEmail = form.querySelector("input[type='email']");
         let userMessage = form.querySelector("textarea");
         const userTopic = form.querySelector("select[name='user_topic']");
         const userSubtopic = form.querySelector("select[name='user_subtopic']");
-        const errorMessagesContainer = document.querySelector(".form__error-message");
+        const formInputs = form.querySelectorAll(".form__item")
         const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         let dataContainer = {
@@ -103,10 +107,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 p.innerText = message;
                 errorMessagesContainer.appendChild(p);
             });
-
-            console.log("error")
         }else{
-            e.preventDefault();
+            formInputs.forEach(function (element) {
+                element.style.border = "transparent";
+            });
 
             errorMessagesContainer.innerHTML = "Message successfully sent";
 
@@ -118,12 +122,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
             console.log(dataContainer);
 
+            // when code below is hidden, form will post data to mocked API and redirect to it
+            e.preventDefault();
             userName.value = null;
             userEmail.value = null;
             userMessage.value = null;
             userTopic.value = userTopic.options[0].value;
             userSubtopic.style.display = "none";
         }
-
     })
 });
