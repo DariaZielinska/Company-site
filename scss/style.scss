@@ -6,11 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+
 }
 
 body{
   font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .container{
@@ -364,7 +365,7 @@ body{
       margin: 9.5px 0;
       padding: 15px;
     }
-    .form__item, .form__item--textarea{
+    .form__item, .form__textarea{
       &::placeholder {
         @include placeholder;
       }
@@ -375,7 +376,7 @@ body{
         @include placeholder;
       }
     }
-    .form__item--textarea{
+    .form__textarea{
       height: 256px;
       resize: none;
     }

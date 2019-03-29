@@ -21,84 +21,11 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    //form validation
-
-    let error = false;
-    let errorMessage;
-    const form = document.querySelector("form");
-    const userName = form.querySelector("input[type='text']");
-    const userEmail = document.querySelector("input[type='email']");
-    const userMessage = document.querySelector("textarea");
-    const errorMessageContainer = document.querySelector(".form__error-message");
-
-    userName.addEventListener("keyup", function () {
-        if(this.value.length === 0){
-            error = true;
-            errorMessage = "Field name is required";
-            console.log("Field name is required");
-
-        }else if(this.value.length < 3){
-            error = true;
-            errorMessage = "Field name must have at least 3 characters";
-            console.log("Field name must have at least 3 characters")
-        }else{
-            error = false;
-        }
-
-        if (error){
-            this.style.border = "1px solid red";
-            errorMessageContainer.innerHTML = errorMessage;
-        }else{
-            this.style.border = "1px solid transparent";
-            errorMessageContainer.innerHTML = null;
-        }
-    });
-
-    userEmail.addEventListener("keyup", function () {
-
-        const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-        if(!pattern.test(this.value)){
-            error = true;
-            errorMessage = "It's not a valid email";
-            console.log("It's not a valid email")
-        }else{
-            error = false;
-        }
-
-        if (error){
-            this.style.border = "1px solid red";
-            errorMessageContainer.innerHTML = errorMessage;
-        }else{
-            this.style.border = "1px solid transparent";
-            errorMessageContainer.innerHTML = null;
-        }
-    });
-
-    userMessage.addEventListener("keyup", function () {
-
-        if(this.value.length < 10){
-            error = true;
-            errorMessage = "Message must have more than 10 characters";
-            console.log("Message needs to be longer than 10 characters")
-        }else{
-            error = false;
-        }
-
-        if (error){
-            this.style.border = "1px solid red";
-            errorMessageContainer.innerHTML = errorMessage;
-        }else{
-            this.style.border = "1px solid transparent";
-            errorMessageContainer.innerHTML = null;
-        }
-    });
-
-    function generateSelects (){
+    //generating topics and subtopics to selectors
+    function generateTopics (){
         const select = document.querySelector(".form__select-topics");
 
         topics.forEach(function (e) {
-
             //generate topics to first select
             const option = document.createElement("option");
             option.innerText = e.value.toUpperCase();
@@ -111,35 +38,91 @@ document.addEventListener('DOMContentLoaded', function(){
             const subtopicsSelect = document.querySelector(".form__select-subtopics");
             const subtopics = topics[select.selectedIndex].subtopic;
 
-
-            console.log(topics[select.selectedIndex].subtopic);
-
             if(subtopics !== null){
-
-                console.log(subtopicsSelect, "przed");
                 // generate subtopics to select
                 subtopics.options.forEach(function (e) {
-
                     const subtopic = document.createElement("option");
                     subtopic.innerText = e.value.toUpperCase();
                     subtopicsSelect.append(subtopic);
-
-                    console.log(subtopicsSelect, "po")
-
                 });
-
                 subtopicsSelect.style.display = "table";
             }else{
                 subtopicsSelect.style.display = "none";
             }
-
-
-
         })
     }
+    generateTopics();
 
-    generateSelects();
+    //form validation
 
-    console.log(topics)
+    let error = false;
+    let errorMessages = [];
+    const form = document.querySelector("form");
+    let userName = form.querySelector("input[type='text']");
+    let userEmail = form.querySelector("input[type='email']");
+    let userMessage = form.querySelector("textarea");
+    const userTopic = form.querySelector("select[name='user_topic']");
+    const userSubtopic = form.querySelector("select[name='user_subtopic']");
+    const errorMessagesContainer = document.querySelector(".form__error-message");
+    const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+
+    form.addEventListener("submit", function (e) {
+
+        let dataContainer = {
+            user_name: null,
+            user_email: null,
+            user_message: null,
+            topic: null,
+            subtopic: null,
+        };
+
+        if(userName.value.length < 3){
+            error = true;
+            errorMessages.push("Field name must have at least 3 characters");
+            userName.style.border = "1px solid red"
+        }
+
+        if(!pattern.test(userEmail.value)){
+            error = true;
+            errorMessages.push("It's not a valid email");
+            userEmail.style.border = "1px solid red"
+        }
+
+        if(userMessage.value.length < 10){
+            error = true;
+            errorMessages.push("Field message must have at least 10 characters");
+            userMessage.style.border = "1px solid red"
+        }
+
+        if(error){
+            e.preventDefault();
+            errorMessagesContainer.innerHTML = null;
+
+            errorMessages.forEach(function (message) {
+                const p = document.createElement("p");
+                p.innerText = message;
+                errorMessagesContainer.appendChild(p);
+            })
+        }else{
+            e.preventDefault();
+
+            errorMessagesContainer.innerHTML = "Message successfully sent";
+
+            dataContainer.user_name = userName.value;
+            dataContainer.user_email = userEmail.value;
+            dataContainer.user_message = userMessage.value;
+            dataContainer.topic = userTopic.value;
+            dataContainer.subtopic = userSubtopic.value;
+
+            console.log(dataContainer);
+
+            userName.value = null;
+            userEmail.value = null;
+            userMessage.value = null;
+            userTopic.value = userTopic.options[0].value;
+            userSubtopic.style.display = "none";
+        }
+
+    })
 });
