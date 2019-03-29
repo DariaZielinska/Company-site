@@ -1,33 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     //making menu visible after clicking on hamburger menu icon
-    const intViewportWidth = window.innerWidth;
-    if(intViewportWidth < 575){
-        document.querySelector(".header-nav").style.display = "none"
-    }
-
     document.querySelector(".fa-bars").addEventListener("click", function () {
         if(document.querySelector(".header-nav").style.display === "none"){
             document.querySelector(".header-nav").style.display = "block";
         }else{
             document.querySelector(".header-nav").style.display = "none"
         }
-
     });
-
-    //generate images to portfolio section
-    const portfolioContainer = document.querySelector(".portfolios-container");
-
-    for (let i=0; i<=7; i++){
-        const portfolioImage = document.createElement("div");
-        portfolioContainer.append(portfolioImage)
-    }
-
-    portfolioContainer.querySelectorAll("div").forEach(function (e) {
-        const header = document.createElement("p");
-        header.innerText = "PROJECT TITLE";
-        e.append(header)
-    })
 
     //form validation
 
@@ -37,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const userName = form.querySelector("input[type='text']");
     const userEmail = document.querySelector("input[type='email']");
     const userMessage = document.querySelector("textarea");
-    const errorMessageContainer = document.querySelector(".error-message");
+    const errorMessageContainer = document.querySelector(".form__error-message");
 
     userName.addEventListener("keyup", function () {
         if(this.value.length === 0){
@@ -100,7 +80,54 @@ document.addEventListener('DOMContentLoaded', function(){
             this.style.border = "1px solid transparent";
             errorMessageContainer.innerHTML = null;
         }
-    })
+    });
 
+    function generateSelects (){
+        const select = document.querySelector(".form__select-topics");
+
+        topics.forEach(function (e) {
+
+            //generate topics to first select
+            const option = document.createElement("option");
+            option.innerText = e.value.toUpperCase();
+            select.append(option);
+        });
+
+        //generate subtopic
+        select.addEventListener("change", function () {
+
+            const subtopicsSelect = document.querySelector(".form__select-subtopics");
+            const subtopics = topics[select.selectedIndex].subtopic;
+
+
+            console.log(topics[select.selectedIndex].subtopic);
+
+            if(subtopics !== null){
+
+                console.log(subtopicsSelect, "przed");
+                // generate subtopics to select
+                subtopics.options.forEach(function (e) {
+
+                    const subtopic = document.createElement("option");
+                    subtopic.innerText = e.value.toUpperCase();
+                    subtopicsSelect.append(subtopic);
+
+                    console.log(subtopicsSelect, "po")
+
+                });
+
+                subtopicsSelect.style.display = "table";
+            }else{
+                subtopicsSelect.style.display = "none";
+            }
+
+
+
+        })
+    }
+
+    generateSelects();
+
+    console.log(topics)
 
 });

@@ -1,6 +1,6 @@
 @media (max-width: 575px) {
 
-  .page-header{
+  .site__header{
     position: relative;
     i{
       color: #ffffff;
@@ -11,12 +11,13 @@
       cursor: pointer;
     }
   }
-  .header-logo{
+  .header__logo{
     text-align: center;
     padding: 30px;
     font-size: 3rem;
   }
-  .header-nav{
+  .header__nav{
+    display: none;
     text-align: center;
     ul{
       li{
@@ -25,24 +26,25 @@
       padding-bottom: 15px;
     }
   }
-  .intro-section{
+  .main__content{
     position: relative;
     min-height: 900px;
     padding-top: 94px;
-    .intro-heading{
+    .main__heading{
+      font-size: 52px;
       text-align: center;
       padding-top: 15px;
       margin: 0 auto;
     }
-    .intro-text{
+    .main__paragraph{
       text-align: justify;
       max-width: 90vw;
       margin: 0 auto;
     }
-    .intro-button{
+    .main__contact-button{
       margin-left: calc(50vw - 51px);
     }
-    .intro-img{
+    .main__image{
       width: 500px;
       height: 500px;
       bottom: -88px;
@@ -54,12 +56,12 @@
     }
   }
 
-  .service-section{
-    .service-image{
+  .section__service{
+    .section-service__image{
       display: none;
     }
-    .service-boxes{
-      .service-box{
+    .section-service__container{
+      .section-service__box{
         margin: 0 auto;
         max-width: 288px;
         text-align: center;
@@ -67,8 +69,8 @@
     }
   }
 
-  .portfolio-section{
-    .portfolios-container{
+  .section__portfolio{
+    .section-portfolio__container{
       justify-content: center;
       div{
         width: 95vw;
@@ -77,11 +79,11 @@
     }
   }
 
-  .pricing-section{
-    .pricing-container{
+  .section__pricing{
+    .section-pricing__container{
       flex-direction: column;
       align-items: center;
-      .pricing-box{
+      .section-pricing__box{
         width: 299px;
         height: 377px;
         margin-bottom: 30px;
@@ -112,7 +114,7 @@
 }
 
 @media (min-width: 576px) {
-  .page-header{
+  .site__header{
     .container{
       display: flex;
       justify-content: center;
@@ -123,7 +125,7 @@
       }
     }
   }
-  .header-nav{
+  .header__nav{
     display: block;
     ul{
       display: flex;
@@ -133,18 +135,19 @@
     }
   }
 
-  .intro-section{
+  .main__content{
     padding-top: 150px;
     padding-left: calc(40% - 200px);
     min-height: 910px;
-    .intro-heading{
+    .main__heading{
+      font-size: 52px;
       text-align: left;
     }
-    .intro-text{
+    .main__paragraph{
       text-align: left;
       max-width: 435px;
     }
-    .intro-img{
+    .main__image{
       width: 750px;
       height: 750px;
       bottom: -131px;
@@ -152,12 +155,12 @@
     }
   }
 
-  .service-section{
-    .service-image{
+  .section__service{
+    .section-service__image{
       display: none;
     }
-    .service-boxes{
-      .service-box{
+    .section-service__container{
+      .section-service__box{
         margin: 0 auto;
         max-width: 288px;
         text-align: center;
@@ -166,8 +169,8 @@
 
   }
 
-  .portfolio-section{
-    .portfolios-container{
+  .section__portfolio{
+    .section-portfolio__container{
       justify-content: center;
       div{
         width: 50vw;
@@ -176,11 +179,11 @@
     }
   }
 
-  .pricing-section{
-    .pricing-container{
+  .section__pricing{
+    .section-pricing__container{
       flex-direction: column;
       align-items: center;
-      .pricing-box{
+      .section-pricing__box{
         margin-bottom: 30px;
         width: 400px;
         height: 500px;
@@ -212,11 +215,11 @@
   .container{
       width: 80vw;
   }
-  .pricing-section{
-    .pricing-container{
+  .section__pricing{
+    .section-pricing__container{
       flex-direction: row;
       align-items: center;
-      .pricing-box{
+      .section-pricing__box{
         margin: 30px 10px;
         width: 299px;
         height: 450px;
@@ -224,20 +227,20 @@
     }
   }
 
-  .service-boxes{
+  .section-service__container{
     display: flex;
     justify-content: center;
     div:nth-of-type(2){
       margin: 0 35px;
     }
-    .service-box{
+    .section-service__box{
       max-width: 288px;
       text-align: center;
     }
   }
 
-  .portfolio-section{
-    .portfolios-container{
+  .section__portfolio{
+    .section-portfolio__container{
       justify-content: center;
       div{
         width: 33.33vw;
@@ -248,7 +251,7 @@
 }
 
 @media (min-width: 992px) {
-  .page-header{
+  .site__header{
     .container{
       display: flex;
       justify-content: space-between;
@@ -256,42 +259,42 @@
   }
 
 
-  .intro-section{
+  .main__content{
     padding-top: 150px;
     padding-left: 0;
 
-    .intro-img{
+    .main__image{
       bottom: -131px;
       right: 0;
     }
   }
 
-  .service-section{
+  .section__service{
     margin-bottom: 260px;
-    .service-image{
+    .section-service__image{
       display: table;
       margin-left: calc(50% - 327px);
     }
-    .service-boxes{
+    .section-service__container{
       position: relative;
-      .service-box{
+      .section-service__box{
         position: absolute;
         top: 5px;
       }
-      .service-box:nth-of-type(1){
+      .section-service__box:nth-of-type(1){
         left: calc(50% - 460px)
       }
-      .service-box:nth-of-type(2){
+      .section-service__box:nth-of-type(2){
         left: calc(50% - 137px)
       }
-      .service-box:nth-of-type(3){
+      .section-service__box:nth-of-type(3){
         left: calc(50% + 180px)
       }
     }
   }
 
-  .portfolio-section{
-    .portfolios-container{
+  .section__portfolio{
+    .section-portfolio__container{
       justify-content: center;
       div{
         width: 25vw;
@@ -305,8 +308,15 @@
   .container{
     width: 1024px;
   }
-  .intro-section{
-    .intro-img{
+  .main__content{
+    padding-top: 250px;
+    .main__heading{
+      font-size: 72px;
+    }
+    .main__paragraph{
+      max-width: 600px;
+    }
+    .main__image{
       width: 900px;
       height: 900px;
       bottom: -158px;

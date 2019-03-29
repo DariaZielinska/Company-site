@@ -17,25 +17,18 @@ body{
   margin: 0 auto;
 }
 
-.invisible{
-  display: none;
-}
-
-.page-header{
+.site__header{
   width: 100vw;
   min-height: 95px;
   background-image: linear-gradient(to bottom, #333b45, #3d454f);
   position: fixed;
   z-index: 3;
-  .container{
-
-  }
-  .header-logo{
+  .header__logo{
     @include text-gradient;
     text-align: left;
     font-size: 22px;
   }
-  .header-nav{
+  .header__nav{
     ul{
       list-style: none;
       a{
@@ -47,16 +40,15 @@ body{
     }
   }
 }
-.intro-section{
+.main__content{
   @include background-gradient;
   position: relative;
-  .intro-heading{
+  .main__heading{
     @include text-gradient;
-    font-size: 52px;
     margin-left: -3px;
     color: #ffffff;
   }
-  .intro-text{
+  .main__paragraph{
     color: #ffffff;
     padding: 32px 0;
     font-size: 14px;
@@ -66,11 +58,11 @@ body{
     line-height: 1.5;
     letter-spacing: normal;
   }
-  .intro-button{
+  .main__contact-button{
     @include button;
     margin-bottom: 34px;
   }
-  .intro-img{
+  .main__image{
     background: transparent url("../images/front-screen-ui-design.png");
     position: absolute;
     z-index: 0;
@@ -78,7 +70,6 @@ body{
     background-repeat: no-repeat;
   }
   .media-container{
-
     i{
       @include social-media;
       width: 46px;
@@ -102,7 +93,7 @@ body{
   }
 }
 
-.section-heading{
+.section__heading{
   font-size: 38px;
   font-weight: 300;
   text-align: center;
@@ -110,14 +101,14 @@ body{
   padding: 91px;
 }
 
-.service-section{
-  .service-image{
+.section__service{
+  .section-service__image{
     width: 654px;
     margin: 0 auto;
   }
-  .service-boxes{
-    .service-box{
-      .box-image{
+  .section-service__container{
+    .section-service__box{
+      .box__image{
         color: #3a424c;
         padding-top: 38px;
       }
@@ -138,9 +129,9 @@ body{
     }
   }
 }
-.portfolio-section{
+.section__portfolio{
   width: 100vw;
-  .portfolios-container{
+  .section-portfolio__container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -150,13 +141,12 @@ body{
       align-items: center;
       cursor: pointer;
       p{
+        @include text-gradient;
         text-align: left;
         font-size: 24px;
-        @include text-gradient;
         z-index: 2;
         display: none;
       }
-
     }
     div:nth-of-type(1){
       background-image: url("../images/layer-5.jpg");
@@ -216,15 +206,15 @@ body{
     }
   }
 }
-.pricing-section{
-  .pricing-container{
+.section__pricing{
+  .section-pricing__container{
     display: flex;
     justify-content: center;
-    .pricing-box{
+    .section-pricing__box{
       border-radius: 10px;
       border: solid 2px #f5f7f9;
       position: relative;
-      .box-top{
+      .box__header{
         @include background-gradient;
         height: 200px;
         border-top: #333b45;
@@ -302,7 +292,7 @@ body{
     }
   }
 }
-.blog-section{
+.section__blog{
   @include background-gradient;
   padding: 64px 0;
   p{
@@ -360,10 +350,13 @@ body{
       margin-left: calc(50% - 51px);
       margin-top: 10px;
     }
-    .error-message{
+    .form__error-message{
       text-align: center;
       color: $primary;
       padding-bottom: 15px;
+    }
+    .form__select-subtopics{
+      display: none;
     }
   }
   label{
@@ -376,6 +369,21 @@ body{
       background-color: #f5f7f9;
       margin: 9.5px 0;
       padding: 15px;
+    }
+    select{
+      //-moz-appearance: none;
+      //-webkit-appearance: none;
+      padding: 10px;
+      @include placeholder;
+      color: #3e3e3e;
+      position: relative;
+    }
+    .form__select-topics:after{
+      content: "PPPPPP";
+      position: absolute;
+      top:0; left: 0;
+      width: 50px;
+      height: 50px;
     }
     input, textarea{
       &::placeholder {
@@ -393,7 +401,6 @@ body{
       resize: none;
     }
   }
-
 }
 footer{
   @include background-gradient;
