@@ -14,7 +14,7 @@ Company Site is another project that create opportunity to learn, practise and t
 https://dariazielinska.github.io/Company-site/
 
 ## Installation:
-1. `cd Web-dev-task`
+1. `cd Company-site`
 2. `npm i`
 3. `gulp`
 
