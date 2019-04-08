@@ -14,9 +14,10 @@ Company Site is another project that create opportunity to learn, practise and t
 https://dariazielinska.github.io/Company-site/
 
 ## Installation:
-1. `cd Company-site`
-2. `npm i`
-3. `gulp`
+1. `git clone https://github.com/DariaZielinska/Company-site.git`
+2. `cd Company-site`
+3. `npm i`
+4. `gulp`
 
 In development mode, localhost server will run on localhost:3000 
 
